@@ -5,18 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Проект Фитнес">
-    <link rel="preload" href="./fonts/BebasNeue-Regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/BebasNeue-Regular.woff" as="font" crossorigin>
-    <link rel="preload" href="./fonts/BebasNeueCyrillic-Regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/BebasNeueCyrillic-Regular.woff" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Bold.woff" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Light.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Light.woff" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff" as="font" crossorigin>
-    <link rel="preload" href="./fonts/rouble.woff2" as="font" crossorigin>
-    <link rel="preload" href="./fonts/rouble.woff" as="font" crossorigin>
+    <link rel="preload" href="./fonts/BebasNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/BebasNeue-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./fonts/BebasNeueCyrillic-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/BebasNeueCyrillic-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Light.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff" as="font" type="font/woff" crossorigin>
     <title>Фитнес</title>
     <link rel="stylesheet" href="./css/style.min.css">
   </head>
@@ -26,7 +24,7 @@
         <section class="banner">
           <div class="banner__top">
             <div class="banner__top-container container">
-              <a href="#" class="banner__logo">
+              <a href="#" class="banner__logo not-active">
                 Supergym
               </a>
               <a href="tel:88005555555" class="banner__tel">
@@ -48,7 +46,7 @@
                     </ul>
                   </div>
                 </div>
-                <a href="#" class="btn btn--white banner__btn">Купить абонемент</a>
+                <a href="#tickets" class="btn btn--white banner__btn">Купить абонемент</a>
               </div>
               <picture class="banner__image">
                 <!-- 1x: 324px; 2x: 648px -->
@@ -94,7 +92,7 @@
               <div class="gym__video" data-video>
                 <iframe data-video-iframe width="364" height="228" src="" data-src="https://www.youtube-nocookie.com/embed/9TZXsZItgdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <button data-video-btn class="gym__video-btn">
-                  <svg width="17" height="17">
+                  <svg width="13" height="15">
                     <use xlink:href="img/sprite_auto.svg#play_arrow"></use>
                   </svg>
                 </button>
@@ -102,7 +100,165 @@
             </div>
           </div>
         </section>
-        
+        <section class="tickets" id="tickets">
+          <div class="tickets__container container">
+            <h2>Абонементы</h2>
+            <ul class="tickets__tabs-list">
+              <li class="tickets__tabs-item is-active" data-ticket-tab="1"><a href="#">1 месяц</a></li>
+              <li class="tickets__tabs-item" data-ticket-tab="6"><a href="#">6 месяцев</a></li>
+              <li class="tickets__tabs-item" data-ticket-tab="12"><a href="#">12 месяцев</a></li>
+            </ul>
+            <div class="tickets__block">
+              <ul class="tickets__list is-active" data-ticket="1">
+                <li class="tickets__item">
+                  <p class="tickets__name">С тренером</p>
+                  <p class="tickets__time">12 занятий</p>
+                  <p class="tickets__price-fade">5000</p>
+                  <p class="tickets__price">5000&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Дневной</p>
+                  <p class="tickets__time">с 8:00 до 17:00</p>
+                  <p class="tickets__price-fade">1700</p>
+                  <p class="tickets__price">1700&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Полный день</p>
+                  <p class="tickets__time">с 8:00 до 22:00</p>
+                  <p class="tickets__price-fade">2700</p>
+                  <p class="tickets__price">2700&nbsp;
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+              </ul>
+              <ul class="tickets__list" data-ticket="6">
+                <li class="tickets__item">
+                  <p class="tickets__name">С тренером</p>
+                  <p class="tickets__time">12 занятий</p>
+                  <p class="tickets__price-fade">4500</p>
+                  <p class="tickets__price">4500&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Дневной</p>
+                  <p class="tickets__time">с 8:00 до 17:00</p>
+                  <p class="tickets__price-fade">1500</p>
+                  <p class="tickets__price">1500&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Полный день</p>
+                  <p class="tickets__time">с 8:00 до 22:00</p>
+                  <p class="tickets__price-fade">2400</p>
+                  <p class="tickets__price">2400&nbsp;
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+              </ul>
+              <ul class="tickets__list" data-ticket="12">
+                <li class="tickets__item">
+                  <p class="tickets__name">С тренером</p>
+                  <p class="tickets__time">12 занятий</p>
+                  <p class="tickets__price-fade">4000</p>
+                  <p class="tickets__price">4000&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Дневной</p>
+                  <p class="tickets__time">с 8:00 до 17:00</p>
+                  <p class="tickets__price-fade">1200</p>
+                  <p class="tickets__price">1200&nbsp; 
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+                <li class="tickets__item">
+                  <p class="tickets__name">Полный день</p>
+                  <p class="tickets__time">с 8:00 до 22:00</p>
+                  <p class="tickets__price-fade">2000</p>
+                  <p class="tickets__price">2000&nbsp;
+                    <svg width="30" height="42">
+                      <use xlink:href="img/sprite_auto.svg#rub"></use>
+                    </svg>
+                  </p>
+                  <a href="#" class="btn btn--black tickets__btn">купить абонемент</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="event">
+          <div class="event__container container">
+            <div class="event__block">
+              <div class="event__description">
+                <div class="event__title">
+                  <h2>SUPER GAMES</h2>
+                  <ul class="event__when-list">
+                    <li class="event__when-item">
+                      <p class="event__when-title">Дата</p>
+                      <div class="event__when-description">
+                        <p class="event__when-text event__when-text--big">7</p>
+                        <p class="event__when-text event__when-text--small">Марта<br>2019</p>
+                      </div>
+                    </li>
+                    <li class="event__when-item">
+                      <p class="event__when-title">Время</p>
+                      <div class="event__when-description">
+                        <p class="event__when-text event__when-text--big">12:00</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <p class="event__subtitle">Ежегодные соревнования по CrossFit</p>
+                <a href="#" class="btn btn--white event__btn">заполнить заявку</a>
+              </div>
+              <picture>
+                <!-- 1x: 290px; 2x: 580px -->
+                <source type="image/webp" srcset="./img/event-mobile.webp 1x, ./img/event-mobile@2x.webp 2x" media="(max-width: 767px)">
+                <!-- 1x: 290px; 2x: 580px -->
+                <source type="image/jpg" srcset="./img/event-mobile.jpg 1x, ./img/event-mobile@2x.jpg 2x" media="(max-width: 767px)">
+                <!-- 1x: 386px; 2x: 772px -->
+                <source type="image/webp" srcset="./img/event-tablet.webp 1x, ./img/event-tablet@2x.webp 2x" media="(max-width: 1199px)">
+                <!-- 1x: 386px; 2x: 772px -->
+                <source type="image/jpg" srcset="./img/event-tablet.jpg 1x, ./img/event-tablet@2x.jpg 2x" media="(max-width: 1199px)">
+                <!-- 1x: 660px; 2x: 1320px -->
+                <source type="image/webp" srcset="./img/event-desktop.webp 1x, ./img/event-desktop@2x.webp 2x">
+                <!-- 1x: 660px; 2x: 1320px -->
+                <img src="./img/event-desktop.jpg" srcset="./img/event-desktop@2x.jpg 2x"  width="660" height="401" alt="SUPER GAMES">
+              </picture>
+            </div>
+          </div>
+        </section>
       </main>
       <footer>
         <div class="container"></div>

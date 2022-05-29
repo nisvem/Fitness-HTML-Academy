@@ -65,3 +65,8 @@
   /* stylelint-disable-next-line */
   transition: none !important;
 }
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+}

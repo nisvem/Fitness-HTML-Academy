@@ -7,7 +7,7 @@ document.querySelectorAll('[data-video]').forEach((video)=> {
 
     const src = iframe.dataset.src;
     // скрываем постер
-    video.classList.add('gym__video--active');
+    video.classList.add('is-active');
     // подставляем в src параметр из data
     iframe.src = src;
     iframe.src += '?autoplay=1';

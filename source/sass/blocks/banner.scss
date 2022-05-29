@@ -9,7 +9,7 @@
     h1 {
         margin: 0;
         text-align: right;
-        font-family: 'Bebas Neue', 'Bebas Neue Cyrillic', 'Arial', sans-serif;
+        font-family: $ff-bebas-neue;
         font-size: 109px;
         line-height: 109px;
         text-align: right;
@@ -46,7 +46,7 @@
 
 .banner__logo {
     margin-top: 30px;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: $ff-bebas-neue;
     font-size: 26px;
     line-height: 26px;
     letter-spacing: 0.02em;
@@ -68,7 +68,7 @@
 
 .banner__tel {
     margin-top: 30px;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: $ff-bebas-neue;
     font-size: 26px;
     line-height: 26px;
     letter-spacing: 0.03em;
@@ -86,6 +86,11 @@
         font-size: 20px;
         line-height: 20px;
         margin-top: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
     }
 }
 
@@ -173,7 +178,7 @@
 }
 
 .banner__title-item {
-    font-family: 'Roboto Condensed', 'Arial', sans-serif;
+    font-family: $ff-roboto-condensed;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
@@ -181,7 +186,7 @@
 }
 
 .banner__subtitle {
-    font-family: 'Bebas Neue', 'Bebas Neue Cyrillic', 'Arial', sans-serif;
+    font-family: $ff-bebas-neue;
     font-weight: 400;
     font-style: normal;
     font-size: 49px;
@@ -246,9 +251,14 @@
 
 .banner__social-link {
     color: $color-default-white;
-    font-family: 'Roboto Condensed', 'Arial', sans-serif;
+    font-family: $ff-roboto-condensed;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
 }

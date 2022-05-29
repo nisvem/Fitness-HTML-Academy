@@ -4,8 +4,9 @@
   align-items: center;
   margin: 0;
   padding: 10px 20px;
+  user-select: none;
 
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-family: $ff-roboto-condensed;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;

@@ -387,14 +387,6 @@ template {
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "Rouble";
-  font-display: swap;
-  src: url("../fonts/rouble.woff2") format("woff2"), url("../fonts/rouble.woff") format("woff");
-}
-
-@font-face {
-  font-style: normal;
-  font-weight: 400;
   font-family: "Bebas Neue";
   font-display: swap;
   src: url("../fonts/BebasNeue-Regular.woff2") format("woff2"), url("../fonts/BebasNeue-Regular.woff") format("woff");
@@ -413,7 +405,7 @@ template {
   font-weight: 300;
   font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2"), url("../fonts/RobotoCondensed-Light.woff") format("woff");
+  src: url("../fonts/RobotoCondensed-Light.woff2") format("woff2"), url("../fonts/RobotoCondensed-Light.woff") format("woff");
 }
 
 @font-face {
@@ -648,6 +640,11 @@ button,
   transition: none !important;
 }
 
+.not-active {
+  pointer-events: none;
+  cursor: default;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -667,7 +664,11 @@ button,
   align-items: center;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -828,7 +829,7 @@ button,
 .banner h1 {
   margin: 0;
   text-align: right;
-  font-family: 'Bebas Neue', 'Bebas Neue Cyrillic', 'Arial', sans-serif;
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
   font-size: 109px;
   line-height: 109px;
   text-align: right;
@@ -862,7 +863,7 @@ button,
 
 .banner__logo {
   margin-top: 30px;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
   font-size: 26px;
   line-height: 26px;
   letter-spacing: 0.02em;
@@ -871,11 +872,16 @@ button,
 
 .banner__tel {
   margin-top: 30px;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
   font-size: 26px;
   line-height: 26px;
   letter-spacing: 0.03em;
   color: #ffffff;
+}
+
+.banner__tel:hover,
+.banner__tel:focus {
+  opacity: 0.8;
 }
 
 .banner__container {
@@ -941,7 +947,7 @@ button,
 }
 
 .banner__title-item {
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
@@ -949,7 +955,7 @@ button,
 }
 
 .banner__subtitle {
-  font-family: 'Bebas Neue', 'Bebas Neue Cyrillic', 'Arial', sans-serif;
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 49px;
@@ -993,11 +999,16 @@ button,
 
 .banner__social-link {
   color: #ffffff;
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
+}
+
+.banner__social-link:hover,
+.banner__social-link:focus {
+  opacity: 0.8;
 }
 
 .gym {
@@ -1027,7 +1038,7 @@ button,
 }
 
 .gym__description h2 {
-  font-family: 'Bebas Neue', 'Bebas Neue Cyrillic', 'Arial', sans-serif;
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
   font-size: 49px;
   line-height: 49px;
   letter-spacing: 0.03em;
@@ -1037,7 +1048,7 @@ button,
 
 .gym__description p {
   margin: 0 0 9px 0;
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
@@ -1048,7 +1059,7 @@ button,
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-family: 'Roboto Condensed', 'Arial', sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -1091,11 +1102,11 @@ button,
   top: 0;
 }
 
-.gym__video--active .gym__video-btn {
+.gym__video.is-active .gym__video-btn {
   display: none;
 }
 
-.gym__video--active::after {
+.gym__video.is-active::after {
   content: none;
 }
 
@@ -1125,7 +1136,19 @@ button,
   border: 0;
   border-radius: 50%;
   z-index: 5;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   cursor: pointer;
+}
+
+.gym__video-btn:hover svg,
+.gym__video-btn:focus svg {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .gym__video-btn::before {
@@ -1176,6 +1199,405 @@ button,
   }
 }
 
+.tickets {
+  background-color: #f8f9fc;
+  padding: 120px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.tickets h2 {
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  color: #102654;
+  margin: 0 auto 23px;
+  text-align: center;
+}
+
+.tickets::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  bottom: -150px;
+  right: 0;
+  width: 287px;
+  height: 494px;
+  background-image: url("../img/weights-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@supports (background-image: url("../img/weights-desktop.webp")) {
+  .tickets::after {
+    background-image: url("../img/weights-desktop.webp");
+  }
+}
+
+.tickets__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tickets__tabs-list {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 46px;
+  max-width: 341px;
+  border-bottom: 2px solid rgba(120, 120, 120, 0.2);
+  margin: 0 0 39px;
+}
+
+.tickets__tabs-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 10px 0 11px;
+  color: rgba(16, 38, 84, 0.8);
+}
+
+.tickets__tabs-item a:hover,
+.tickets__tabs-item a:focus {
+  opacity: 0.8;
+}
+
+.tickets__tabs-item.is-active a {
+  position: relative;
+}
+
+.tickets__tabs-item.is-active a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 2px;
+  background-color: #d10a42;
+}
+
+.tickets__block {
+  width: 100%;
+}
+
+.tickets__list {
+  display: none;
+  gap: 40px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.tickets__list.is-active {
+  display: -ms-grid;
+  display: grid;
+}
+
+.tickets__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 55px 70px 62px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  position: relative;
+  border: 7px solid #ffffff;
+}
+
+.tickets__item:hover {
+  border: 7px solid;
+  border-image-source: linear-gradient(148.82deg, #D10A42 0.85%, #00359F 100%);
+  border-image-slice: 1;
+}
+
+.tickets__item:hover .tickets__btn {
+  background: -o-linear-gradient(352.95deg, #ED0233 17.6%, #003EB7 95.31%);
+  background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+  color: #ffffff;
+  border: 0;
+}
+
+.tickets__name {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 29px;
+  text-align: center;
+  color: #102654;
+  margin: 0 0 9px;
+  position: relative;
+  z-index: 1;
+}
+
+.tickets__time {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #495a7d;
+  margin: 0 0 66px;
+  position: relative;
+  z-index: 1;
+}
+
+.tickets__price-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 150px;
+  color: #e8e8e8;
+  opacity: 0.48;
+  margin: 0;
+  padding: 0 0 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tickets__price {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  color: #103aae;
+  margin: 0 0 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tickets__btn {
+  position: relative;
+  z-index: 1;
+  width: 206px;
+  min-height: 64px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.event {
+  padding: 120px 0;
+}
+
+.event img {
+  height: 100%;
+  max-width: 660px;
+  width: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.event h2 {
+  font-family: "Bebas Neue", "Bebas Neue Cyrillic", "Arial", sans-serif;
+  font-size: 90px;
+  line-height: 90px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin: 0;
+  max-width: 200px;
+}
+
+.event__block {
+  background-color: #ed0233;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.event__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 83px 78px;
+}
+
+.event__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  gap: 51px;
+}
+
+.event__when-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  gap: 18px;
+}
+
+.event__subtitle {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 8px 0 46px;
+  color: #ffffff;
+}
+
+.event__btn {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 25px 10px 24px 13px;
+  margin-left: -3px;
+}
+
+.event__when-title {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0 0 7px;
+}
+
+.event__when-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 7px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.event__when-text {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+.event__when-text--big {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.event__when-text--small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -1198,6 +1620,16 @@ button,
 @supports (background-image: url("../img/bg-video-desktop@2x.webp")) {
     .gym__video {
       background-image: url("../img/bg-video-desktop@2x.webp");
+    }
+}
+
+  .tickets::after {
+    background-image: url("../img/weights-desktop@2x.png");
+  }
+
+@supports (background-image: url("../img/weights-desktop@2x.webp")) {
+    .tickets::after {
+      background-image: url("../img/weights-desktop@2x.webp");
     }
 }
 }
@@ -1261,7 +1693,7 @@ button,
   }
 
   .gym {
-    padding: 100px 0;
+    padding: 100px 0 68px;
   }
 
   .gym__container {
@@ -1343,6 +1775,110 @@ button,
     top: calc(50% - 73px/2);
     left: calc(50% - 73px/2);
   }
+
+  .tickets {
+    padding: 100px 0;
+  }
+
+  .tickets h2 {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  .tickets::after {
+    width: 347px;
+    height: 444px;
+    bottom: -126px;
+    background-image: url("../img/weights-tablet.png");
+  }
+
+@supports (background-image: url("../img/weights-tablet.webp")) {
+    .tickets::after {
+      background-image: url("../img/weights-tablet.webp");
+    }
+}
+
+  .tickets__tabs-list {
+    gap: 54px;
+    max-width: 332px;
+  }
+
+  .tickets__tabs-item a {
+    font-size: 18px;
+    line-height: 27px;
+    padding: 6px 0 11px;
+  }
+
+  .tickets__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .tickets__item {
+    min-width: 442px;
+    margin: auto;
+    padding: 60px 70px 59px;
+  }
+
+  .event {
+    padding: 103px 0 100px;
+  }
+
+  .event img {
+    max-width: 386px;
+  }
+
+  .event h2 {
+    max-width: 117px;
+    font-size: 52px;
+    line-height: 52px;
+  }
+
+  .event__description {
+    padding: 47px 45px;
+  }
+
+  .event__title {
+    gap: 30px;
+  }
+
+  .event__when-list {
+    gap: 3px;
+  }
+
+  .event__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 31px;
+  }
+
+  .event__btn {
+    font-size: 10px;
+    line-height: 12px;
+    border-width: 2px;
+    margin-left: 0;
+    padding: 13px 10px 12px 8px;
+  }
+
+  .event__when-title {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  .event__when-description {
+    gap: 3px;
+  }
+
+  .event__when-text--big {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .event__when-text--small {
+    font-size: 10px;
+    line-height: 15px;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1199px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1199px), (min-resolution: 144dpi) and (max-width: 1199px), (min-resolution: 1.5dppx) and (max-width: 1199px) {
@@ -1353,6 +1889,16 @@ button,
 @supports (background-image: url("../img/bg-video-tablet@2x.webp")) {
     .gym__video {
       background-image: url("../img/bg-video-tablet@2x.webp");
+    }
+}
+
+  .tickets::after {
+    background-image: url("../img/weights-tablet@2x.png");
+  }
+
+@supports (background-image: url("../img/weights-tablet@2x.webp")) {
+    .tickets::after {
+      background-image: url("../img/weights-tablet@2x.webp");
     }
 }
 }
@@ -1427,7 +1973,7 @@ button,
   }
 
   .gym {
-    padding: 69px 0;
+    padding: 69px 0 162px;
   }
 
   .gym__container {
@@ -1480,6 +2026,115 @@ button,
     width: 12px;
     height: 12px;
     margin-left: 4px;
+  }
+
+  .tickets {
+    padding: 70px 0;
+  }
+
+  .tickets h2 {
+    font-size: 32px;
+    line-height: 32px;
+    margin: 0 auto 16px;
+  }
+
+  .tickets::after {
+    content: none;
+  }
+
+  .tickets__tabs-list {
+    gap: 46px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 0 33px;
+  }
+
+  .tickets__tabs-item a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tickets__item {
+    min-width: 290px;
+    width: 100%;
+    padding: 45px 34px 43px;
+  }
+
+  .tickets__name {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .tickets__time {
+    margin: 0 0 54px;
+  }
+
+  .tickets__price-fade {
+    font-size: 80px;
+    line-height: 120px;
+    padding: 0 0 29px;
+  }
+
+  .tickets__price {
+    font-size: 48px;
+    line-height: 72px;
+    margin: 0 0 30px;
+  }
+
+  .tickets__price svg {
+    width: 24px;
+    height: 33px;
+  }
+
+  .event {
+    padding: 75px 0 75px;
+  }
+
+  .event img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 292px;
+  }
+
+  .event__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .event__description {
+    padding: 50px 44px;
+  }
+
+  .event__title {
+    gap: 29px;
+  }
+
+  .event__when-list {
+    gap: 8px;
+  }
+
+  .event__subtitle {
+    margin: 0 0 30px;
+  }
+
+  .event__when-title {
+    line-height: 14px;
+    margin-bottom: 3px;
+  }
+
+  .event__when-description {
+    padding-top: 3px;
+  }
+
+  .event__when-text--big {
+    line-height: 24px;
+  }
+
+  .event__when-text--small {
+    line-height: 12px;
   }
 }
 
