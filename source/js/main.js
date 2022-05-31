@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import './modules/video';
 import './modules/tabs';
 import './modules/scroll';
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +21,9 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
   });
+
 });
+
 
 // ---------------------------------
 
