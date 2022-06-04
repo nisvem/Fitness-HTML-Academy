@@ -32,4 +32,19 @@ const swiperCoaches = new Swiper('.coaches__swiper.swiper', {
   },
 });
 
+const swiperReviews = new Swiper('.reviews__swiper.swiper', {
+  spaceBetween: 40,
+  slidesPerView: 1,
+  autoHeight: true,
+  direction: 'horizontal',
+  loop: true,
+  modules: [Navigation],
+  navigation: {
+    nextEl: '.reviews__button--next.swiper-button-next',
+    prevEl: '.reviews__button--prev.swiper-button-prev',
+  },
+});
 
+swiperCoaches.init();
+
+swiperReviews.init();

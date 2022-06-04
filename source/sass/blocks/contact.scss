@@ -1,0 +1,175 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  background: $color-default-white;
+  border-top: 1px solid $color-light-slate-grey;
+  padding: 67px 0 64px 121px;
+
+  @include vp-1199 {
+    padding: 67px 0 63px 133px;
+  }
+
+  @include vp-767 {
+    padding: 68px 15px 63px;
+  }
+
+  h2 {
+    font-family: $ff-bebas-neue;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+
+    color: $color-sapphire;
+    margin: 0 0 41px;
+
+    @include vp-1199 {
+      font-size: 42px;
+      line-height: 42px;
+      margin: 0 0 34px;
+    }
+
+    @include vp-767 {
+      font-size: 32px;
+      line-height: 32px;
+      margin: 0 0 34px;
+    }
+  }
+}
+
+.contact__container {
+  max-width: 468px;
+  width: 100%;
+
+  @include vp-1199 {
+    max-width: 532px;
+  }
+
+  @include vp-767 {
+    max-width: 290px;
+    margin: 0 auto;
+  }
+}
+
+.contact__list {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "c1 c3"
+    "c2 c4";
+
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  row-gap: 18px;
+
+  @include vp-1199 {
+    row-gap: 22px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c1"
+      "c2"
+      "c3"
+      "c4";
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+    background-color: $color-light-slate-grey;
+
+    @include vp-767 {
+      content: none;
+    }
+  }
+}
+
+.contact__item {
+  &:nth-child(1) {
+    grid-area: c1;
+    padding-left: 3px;
+
+    @include vp-1199 {
+      padding-left: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    grid-area: c2;
+    padding-left: 3px;
+
+    @include vp-1199 {
+      padding-left: 0;
+    }
+  }
+
+  &:nth-child(3) {
+    grid-area: c3;
+    padding-left: 60px;
+
+    @include vp-1199 {
+      padding-left: 48px;
+    }
+
+    @include vp-767 {
+      padding-left: 0;
+    }
+  }
+
+  &:nth-child(4) {
+    grid-area: c4;
+    padding-left: 60px;
+
+    @include vp-1199 {
+      padding-left: 48px;
+    }
+
+    @include vp-767 {
+      padding-left: 0;
+    }
+  }
+}
+
+.contact__name {
+  font-family: $ff-roboto-condensed;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: $color-sapphire;
+  margin: 0 0 3px;
+
+  @include vp-1199 {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 0 4px;
+  }
+}
+
+.contact__text {
+  font-family: $ff-roboto-condensed;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: $color-sapphire;
+  margin: 0;
+
+  @include vp-1199 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
