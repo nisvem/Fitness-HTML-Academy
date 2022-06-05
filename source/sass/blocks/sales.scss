@@ -42,8 +42,6 @@
     flex-direction: column;
     gap: 30px;
   }
-
-  @include vp-767 {}
 }
 
 .sales__main {
@@ -86,7 +84,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
-    margin: 0;
+    margin: 0 0 20px 0;
     color: $color-default-white;
 
     @include vp-767 {
@@ -107,6 +105,7 @@
 
   picture {
     width: 50%;
+    height: 100%;
 
     @include vp-1199 {
       width: 59%;
@@ -118,7 +117,8 @@
   }
 
   img {
-    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -217,7 +217,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    margin: 0;
+    margin: 0 0 20px 0;
 
     color: $color-resolution-blue;
 
@@ -232,5 +232,9 @@
 
     color: $color-resolution-blue;
     border-bottom: 1px solid $color-resolution-blue;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

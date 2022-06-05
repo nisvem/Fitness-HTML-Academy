@@ -64,7 +64,7 @@
 
     @include vp-767 {
       font-size: 32px;
-      line-height: 32px;    
+      line-height: 32px;
     }
   }
 
@@ -135,59 +135,63 @@
   left: -64px;
   width: 365px;
   height: 228px;
-  background-image: url('../img/bg-video-desktop.jpg');
+  background-image: url("../img/bg-video-desktop.jpg");
+  background-color: $color-resolution-blue;
 
-  @supports (background-image: url('../img/bg-video-desktop.webp')) {
-    background-image: url('../img/bg-video-desktop.webp');
+  iframe {
+    border: 0;
+  }
+
+  @supports (background-image: url("../img/bg-video-desktop.webp")) {
+    background-image: url("../img/bg-video-desktop.webp");
   }
 
   @include retina {
-
     @media (min-width: $vp-1199) {
-      background-image: url('../img/bg-video-desktop@2x.jpg');
+      background-image: url("../img/bg-video-desktop@2x.jpg");
 
-      @supports (background-image: url('../img/bg-video-desktop@2x.webp')) {
-        background-image: url('../img/bg-video-desktop@2x.webp');
+      @supports (background-image: url("../img/bg-video-desktop@2x.webp")) {
+        background-image: url("../img/bg-video-desktop@2x.webp");
       }
     }
 
     @include vp-1199 {
-      background-image: url('../img/bg-video-tablet@2x.jpg');
+      background-image: url("../img/bg-video-tablet@2x.jpg");
 
-      @supports (background-image: url('../img/bg-video-tablet@2x.webp')) {
-        background-image: url('../img/bg-video-tablet@2x.webp');
+      @supports (background-image: url("../img/bg-video-tablet@2x.webp")) {
+        background-image: url("../img/bg-video-tablet@2x.webp");
       }
     }
 
     @include vp-767 {
-      background-image: url('../img/bg-video-mobile@2x.jpg');
+      background-image: url("../img/bg-video-mobile@2x.jpg");
 
-      @supports (background-image: url('../img/bg-video-mobile@2x.webp')) {
-        background-image: url('../img/bg-video-mobile@2x.webp');
+      @supports (background-image: url("../img/bg-video-mobile@2x.webp")) {
+        background-image: url("../img/bg-video-mobile@2x.webp");
       }
     }
   }
 
   @include vp-1199 {
-    background-image: url('../img/bg-video-tablet.jpg');
+    background-image: url("../img/bg-video-tablet.jpg");
 
-    @supports (background-image: url('../img/bg-video-tablet.webp')) {
-      background-image: url('../img/bg-video-tablet.webp');
+    @supports (background-image: url("../img/bg-video-tablet.webp")) {
+      background-image: url("../img/bg-video-tablet.webp");
     }
   }
 
   @include vp-767 {
-    background-image: url('../img/bg-video-mobile.jpg');
+    background-image: url("../img/bg-video-mobile.jpg");
 
-    @supports (background-image: url('../img/bg-video-mobile.webp')) {
-      background-image: url('../img/bg-video-mobile.webp');
+    @supports (background-image: url("../img/bg-video-mobile.webp")) {
+      background-image: url("../img/bg-video-mobile.webp");
     }
   }
 
   &::after {
     display: flex;
     position: absolute;
-    content: '';
+    content: "";
     background: rgba($color-dark-cerulean, 0.5);
     width: 100%;
     height: 100%;
@@ -196,7 +200,7 @@
     top: 0;
   }
 
-  &.is-active{
+  &.is-active {
     .gym__video-btn {
       display: none;
     }
@@ -246,12 +250,12 @@
   cursor: pointer;
 
   &:hover svg,
-  &:focus svg{
+  &:focus svg {
     transform: scale(1.4);
   }
 
   &::before {
-    content: '';
+    content: "";
 
     position: absolute;
     width: 100px;
@@ -274,8 +278,8 @@
     &::before {
       width: 73px;
       height: 73px;
-      top: calc(50% - 73px/2);
-      left: calc(50% - 73px/2);
+      top: calc(50% - (73px / 2));
+      left: calc(50% - (73px / 2));
     }
   }
 

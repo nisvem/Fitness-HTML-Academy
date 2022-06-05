@@ -1,6 +1,6 @@
 // Swiper 7.4.1
 import Swiper, {Navigation} from 'swiper';
-// import 'swiper/css';
+
 
 const swiperCoaches = new Swiper('.coaches__swiper.swiper', {
   spaceBetween: 0,
@@ -37,7 +37,7 @@ const swiperReviews = new Swiper('.reviews__swiper.swiper', {
   slidesPerView: 1,
   autoHeight: true,
   direction: 'horizontal',
-  loop: true,
+  loop: false,
   modules: [Navigation],
   navigation: {
     nextEl: '.reviews__button--next.swiper-button-next',

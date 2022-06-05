@@ -38,11 +38,10 @@
     }
   }
 
-
   input {
     background-color: $color-transparent;
     color: $color-default-white;
-    outline: none;
+    outline: 0;
 
     font-family: $ff-roboto-condensed;
     font-weight: 400;
@@ -60,9 +59,28 @@
     &.is--error {
       border-bottom: 1px solid $color-torch-red;
     }
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $color-default-white;
+    }
   }
 
-
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+  
+    @include vp-1199 {
+      column-gap: 60px;
+      row-gap: 30px;
+    }
+  
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .contact-form__container {
@@ -79,21 +97,7 @@
   }
 }
 
-.contact-form__form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 30px;
 
-  @include vp-1199 {
-    column-gap: 60px;
-    row-gap: 30px;
-  }
-
-  @include vp-767 {
-    grid-template-columns: 1fr;
-  }
-}
 
 .contact-form__btn {
   grid-column: 1 / 3;
