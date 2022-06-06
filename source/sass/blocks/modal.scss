@@ -29,22 +29,6 @@
     display: none;
   }
 
-  &__wrapper {
-    position: relative;
-
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100%;
-    padding: 60px 40px;
-
-    @include vp-767 {
-      padding: 60px 16px;
-    }
-  }
-
   &__overlay {
     position: absolute;
     top: 0;
@@ -53,35 +37,6 @@
     width: 100%;
     height: 100%;
 
-    cursor: pointer;
-  }
-
-  &__content {
-    position: relative;
-
-    width: 600px;
-    padding: 40px;
-
-    background-color: $color-default-white;
-
-    @include vp-767 {
-      width: 100%;
-      padding: 20px;
-    }
-  }
-
-  &__close-btn {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 1;
-
-    width: 40px;
-    height: 40px;
-    padding: 0;
-
-    background: $color-transparent;
-    border: none;
     cursor: pointer;
   }
 
@@ -115,5 +70,50 @@
     opacity: 1;
 
     pointer-events: auto;
+  }
+}
+
+.modal__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 60px 40px;
+
+  @include vp-767 {
+    padding: 60px 16px;
+  }
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 1;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background: $color-transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__content {
+  position: relative;
+
+  width: 600px;
+  padding: 40px;
+
+  background-color: $color-default-white;
+
+  @include vp-767 {
+    width: 100%;
+    padding: 20px;
   }
 }
