@@ -166,7 +166,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 51px 46px;
+  padding: 51px 18px 51px 31px;
   position: absolute;
   top: 110%;
   left: 0;
@@ -174,10 +174,16 @@
   height: 100%;
   transition: top $trans-default;
 
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+
+
   background: rgba($color-sapphire, 0.89);
 
   @include vp-767 {
-    padding: 41px 25px;
+    padding: 41px 12px 41px 10px;
   }
 
   ul {
@@ -187,7 +193,7 @@
     justify-content: flex-start;
     gap: 13px;
     margin: 33px 0 0;
-    padding-left: 25px;
+    padding-left: 40px;
   }
 
   li {

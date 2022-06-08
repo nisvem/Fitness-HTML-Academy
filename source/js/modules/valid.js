@@ -1,3 +1,6 @@
+import {modals as modal} from '../modules/modals/init-modals';
+
+
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-form]').forEach((form) => {
     const name = form.querySelector('[data-name]');
@@ -26,7 +29,9 @@ window.addEventListener('DOMContentLoaded', () => {
         evt.preventDefault();
         phone.classList.remove('is--error');
         name.classList.remove('is--error');
-
+        modal.open('success');
+        name.value = '';
+        phone.value = '';
         // Тут отправить форму Ajax'ом
       }
     });

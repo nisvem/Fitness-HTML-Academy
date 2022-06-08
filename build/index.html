@@ -16,6 +16,7 @@
   <link rel="preload" href="./fonts/RobotoCondensed-Light.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
   <title>Фитнес</title>
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
@@ -27,7 +28,7 @@
         <div class="banner__top">
           <div class="banner__top-container container">
             <a href="#" class="banner__logo not-active">
-              Supergym
+              <img src="./img/svg/logo.svg" alt="Логотип" width="87" height="20">
             </a>
             <a href="tel:88005555555" class="banner__tel">
               8-800-555-55-55
@@ -532,12 +533,12 @@
                 <p class="contact__text">г. Омск, ул. 60 лет Октября, 7</p>
               </li>
               <li class="contact__item">
-                <p class="contact__name">График работы:</p>
-                <p class="contact__text">Пн-Вс: с 8:00 до 22:00</p>
-              </li>
-              <li class="contact__item">
                 <p class="contact__name">Телефон:</p>
                 <p class="contact__text"><a href="tel:88005555555">8-800-555-55-55</a></p>
+              </li>
+              <li class="contact__item">
+                <p class="contact__name">График работы:</p>
+                <p class="contact__text">Пн-Вс: с 8:00 до 22:00</p>
               </li>
               <li class="contact__item">
                 <p class="contact__name">Email:</p>
@@ -551,7 +552,7 @@
     <footer class="footer">
       <div class="container footer__container">
         <a href="#" class="footer__logo not-active">
-          Supergym
+          <img src="./img/svg/logo.svg" alt="Логотип" width="87" height="20">
         </a>
         <ul class="footer__link-list">
           <li class="footer__link-item"><a href="#">Услуги</a></li>
@@ -586,6 +587,21 @@
         </ul>
       </div>
     </footer>
+  </div>
+
+  <div class="modal modal--preload" data-modal="success">
+    <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+        <h2>Форма отправлена</h2>
+
+        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <svg width="15" height="15">
+            <use xlink:href="img/sprite_auto.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>

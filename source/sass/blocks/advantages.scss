@@ -46,7 +46,7 @@
   display: grid;
   grid-template-columns: minmax(340px, 1fr) 240px minmax(340px, 1fr);
   column-gap: 60px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
 
   grid-template-areas:
     "one center two"
@@ -101,6 +101,7 @@
       padding-left: 0;
       border: none;
       justify-content: flex-end;
+      padding-bottom: 0;
     }
 
     @include vp-767 {
@@ -115,6 +116,7 @@
 
     @include vp-1199 {
       border: none;
+      padding-bottom: 0;
     }
 
     @include vp-767 {
@@ -206,10 +208,11 @@
     @include vp-1199 {
       padding-left: 0;
       justify-content: flex-end;
+      padding-top: 0;
     }
 
     @include vp-767 {
-      padding-top: 0;
+
       gap: 0;
     }
 
@@ -240,10 +243,11 @@
 
     @include vp-1199 {
       gap: 32px;
+      padding-top: 0;
     }
 
     @include vp-767 {
-      padding-top: 0;
+
       gap: 0;
     }
 
