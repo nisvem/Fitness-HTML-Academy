@@ -423,7 +423,6 @@ template {
   display: flex;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
-  -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
   -webkit-box-sizing: content-box;
@@ -454,7 +453,6 @@ template {
   position: relative;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
-  -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
 }
@@ -476,7 +474,6 @@ template {
   align-items: flex-start;
   -webkit-transition-property: height, -webkit-transform;
   transition-property: height, -webkit-transform;
-  -o-transition-property: transform, height;
   transition-property: transform, height;
   transition-property: transform, height, -webkit-transform;
 }
@@ -521,25 +518,21 @@ template {
 
 .swiper-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
@@ -928,7 +921,6 @@ button,
 .no-transition {
   /* stylelint-disable-next-line */
   -webkit-transition: none !important;
-  -o-transition: none !important;
   transition: none !important;
 }
 
@@ -969,7 +961,6 @@ button,
   border: none;
   cursor: pointer;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -1012,7 +1003,6 @@ button,
   opacity: 0;
   -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  -o-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   pointer-events: none;
@@ -1049,7 +1039,6 @@ button,
 
 .modal--preload {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -1426,7 +1415,6 @@ button,
   height: 72px;
   top: calc(50% - 36px);
   left: calc(50% - 36px);
-  background: -o-linear-gradient(45.11deg, #003d85 25.38%, #b80027 74.89%);
   background: linear-gradient(44.89deg, #003d85 25.38%, #b80027 74.89%);
   outline: none;
   border: 0;
@@ -1434,7 +1422,6 @@ button,
   z-index: 5;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
-  -o-transition: transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   cursor: pointer;
@@ -1647,7 +1634,6 @@ button,
 }
 
 .tickets__item:hover .tickets__btn {
-  background: -o-linear-gradient(352.95deg, #ed0233 17.6%, #003eb7 95.31%);
   background: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
   color: #ffffff;
   border: 0;
@@ -1954,7 +1940,6 @@ button,
   width: 100%;
   opacity: 1;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
@@ -2016,7 +2001,6 @@ button,
   width: 100%;
   height: 100%;
   -webkit-transition: top 0.3s ease;
-  -o-transition: top 0.3s ease;
   transition: top 0.3s ease;
   overscroll-behavior-y: contain;
   overflow-y: auto;
@@ -2267,7 +2251,6 @@ button,
   font-size: 71px;
   line-height: 71px;
   margin: 0;
-  background: -o-linear-gradient(307.49deg, #d10a42 0%, #0041ca 87.33%);
   background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
   color: #2e35ac;
   -webkit-background-clip: text;
@@ -2853,7 +2836,7 @@ button,
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1199px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1199px), (min-resolution: 144dpi) and (min-width: 1199px), (min-resolution: 1.5dppx) and (min-width: 1199px) {
+@media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1199px), (min-resolution: 144dpi) and (min-width: 1199px), (min-resolution: 1.5dppx) and (min-width: 1199px) {
   .gym__video {
     background-image: url("../img/bg-video-desktop@2x.jpg");
   }
@@ -3429,7 +3412,7 @@ button,
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1199px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1199px), (min-resolution: 144dpi) and (max-width: 1199px), (min-resolution: 1.5dppx) and (max-width: 1199px) {
+@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1199px), (min-resolution: 144dpi) and (max-width: 1199px), (min-resolution: 1.5dppx) and (max-width: 1199px) {
   .gym__video {
     background-image: url("../img/bg-video-tablet@2x.jpg");
   }
@@ -4153,7 +4136,7 @@ button,
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
+@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
   .gym__video {
     background-image: url("../img/bg-video-mobile@2x.jpg");
   }
